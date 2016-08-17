@@ -25,30 +25,41 @@ describe('chat input interaction', function() {
     var chatArea = browser.element('.show-recent-message');
 
     assert.equal(chatArea.getText(), 'a string');
-
   });
 
   it('should clear the input field after submit', function() {
     var chatInput = browser.element('.input-field');
 
     assert(chatInput.getValue(), '');
-
   });
 
   it('should have a chat area', function() {
     var chatArea = browser.element('.chat-box');
 
     assert(chatArea.isExisting(''));
-
   });
 
-  xit('should disable the send button upon page load', function() {
+  it('should disable the send button upon page load', function() {
+
     browser.url('/');
 
-    var sendButton = browser.element('.send-button');
+    var buttonStatus = browser.isEnabled('.send-button');
 
-    assert.isTrue(sendButton.prop('disabled'), 'is disabled');
+    assert.equal(buttonStatus, false);
   });
+
+  it('should enable the button when there is text in the input field',function(){
+
+    var chatInput = browser.element('.input-field');
+
+    chatInput.setValue('suh dude');
+
+    var expectedButtonStatus = browser.isEnabled('.send-button');
+
+    assert.equal(expectedButtonStatus, true);
+  });
+
+  
 
 
 });
