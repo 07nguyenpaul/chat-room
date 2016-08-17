@@ -10,7 +10,7 @@ describe('webpage interaction', function() {
 });
 
 describe('chat input interaction', function() {
-  it('should have chat input', function() {
+  it('should have chat input and append to page', function() {
     browser.url('/');
 
     var chatInput = browser.element('.input-field');
@@ -19,37 +19,36 @@ describe('chat input interaction', function() {
     assert.equal(chatInput.getValue(), 'a string');
   });
 
-  it('message should append to the page', function() {
-    browser.url('/');
-
-    var chatArea = browser.element('.chat-box');
-
-    chatArea.setValue('something');
-
-    assert.equal(chatArea.getValue(), 'something');
+  it('sends input to chat area section', function() {
 
     browser.click('.send-button');
+    var chatArea = browser.element('.show-recent-message');
 
-    var allMessages = browser.getText('article');
-    assert.equal(allMessages.replace(/\n/g, ", "), 'something');
+    assert.equal(chatArea.getText(), 'a string');
+
+  });
+
+  it('should clear the input field after submit', function() {
+    var chatInput = browser.element('.input-field');
+
+    assert(chatInput.getValue(), '');
+
   });
 
   it('should have a chat area', function() {
-    browser.url('/');
-
     var chatArea = browser.element('.chat-box');
-    chatArea.setValue('so many chats');
 
-    assert.equal(chatArea.getValue(), 'so many chats');
+    assert(chatArea.isExisting(''));
+
   });
 
-  // it('should disable the send button upon page load', function() {
-  //   browser.url('/');
-  //
-  //   var sendButton = browser.element('.send-button');
-  //
-  //   assert.isTrue(sendButton.prop('disabled'), 'is disabled');
-  // });
+  xit('should disable the send button upon page load', function() {
+    browser.url('/');
+
+    var sendButton = browser.element('.send-button');
+
+    assert.isTrue(sendButton.prop('disabled'), 'is disabled');
+  });
 
 
 });
