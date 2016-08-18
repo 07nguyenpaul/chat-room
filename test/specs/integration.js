@@ -30,7 +30,10 @@ describe('chat input interaction', function() {
   it('should clear the input field after submit', function() {
     var chatInput = browser.element('.input-field');
 
-    assert(chatInput.getValue(), '');
+    browser.buttonUp('.send-button');
+    chatInput.setValue('');
+
+    assert.equal(chatInput.getValue(), '');
   });
 
   it('should have a chat area', function() {
@@ -59,7 +62,28 @@ describe('chat input interaction', function() {
     assert.equal(expectedButtonStatus, true);
   });
 
-  
+  it('should display chat in chronological order', function() {
+    var chatInput = browser.element('.input-field');
+
+    chatInput.setValue('suh dude');
+    browser.click('.send-button');
+    chatInput.setValue('yo man');
+    browser.click('.send-button');
+
+    var chatList = browser.getText('.show-recent-message');
+
+    assert.equal(chatList[0], 'suh dude');
+    assert.equal(chatList[1], 'yo man');
+  });
+
+  it('should visually differentiate each user', function() {
+    var colorUser1 = browser.getCssProperty('user1', 'color');
+    var colorUser2 = browser.getCssProperty('user2', 'color');
+
+    assert.notEqual(colorUser1, colorUser2, 'not the same color');
+
+  });
+
 
 
 });
