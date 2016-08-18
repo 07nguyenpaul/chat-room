@@ -1,4 +1,7 @@
 const assert = require('chai').assert;
+const $ = require('jquery');
+const chat = require('../../lib/index');
+
 
 describe('our test bundle', function () {
   it('should work', function () {
@@ -6,36 +9,27 @@ describe('our test bundle', function () {
   });
 });
 
-//The application should have a section for displaying chat messages.
+// describe('storing user input', function() {
+//   it('should store the user"s chat input in a variable', function() {
+//
+//   });
+// });
 
-describe('display chat messages', function() {
-  it('should have a section for displaying chat messages', function() {
-    // $('#header').should.have.class('foo');
-    // expect($('body')).to.have.class('foo');
+describe('message input interactions', function() {
+  it('messageDisplay() should display the chat message to the page', function() {
+    var $messageInput = $('.input-field');
+    $messageInput.val('Great idea.');
 
-    // $('section').should.have.class('chat-box');
-    // expect($('section')).to.have.class('chat-box');
-
-    // var newSection = getElementsByTagName('section');
-    // assert(newSection.attr('class') === 'chat-box', 'section has class chat-box');
+    assert.equal(chat.messageDisplay(), 'Great idea.');
   });
-});
 
+  it('disableButton() should disable the button', function() {
+    var $sendButton = $('.send-button');
+    assert.isTrue(disableButton(), 'the button is disabled');
+  });
 
-
-describe('reverse chronological order', function() {
-  it('should display messages in reverse chronological order', function() {
-    var ideaOne = Date.now();
-    var ideaTwo;
-    function delayIdeaTwo(ideaTwo) {
-      ideaTwo = window.setTimeout(returnIdeaTwo, 2000);
-      return ideaTwo;
-    }
-    function returnIdeaTwo (ideaTwo) {
-      ideaTwo = Date.now();
-      return ideaTwo;
-    }
-    assert.isAbove(ideaTwo, ideaOne, 'ideaTwo is greater than ideaOne');
-
+  it('enableButton() should enable the button', function() {
+    var $sendButton = $('.send-button');
+    assert.isTrue(enableButton(), 'the button is enabled');
   });
 });
