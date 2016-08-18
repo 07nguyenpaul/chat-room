@@ -77,8 +77,8 @@ describe('chat input interaction', function() {
   });
 
   it('should visually differentiate each user', function() {
-    var colorUser1 = browser.getCssProperty('user1', 'color');
-    var colorUser2 = browser.getCssProperty('user2', 'color');
+    var colorUser1 = browser.getCssProperty('.user1', 'color');
+    var colorUser2 = browser.getCssProperty('.user2', 'color');
 
     assert.notEqual(colorUser1, colorUser2, 'not the same color');
 
