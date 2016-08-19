@@ -1,6 +1,6 @@
 const assert = require('chai').assert;
 const $ = require('jquery');
-const chat = require('../../lib/index');
+require('../../lib/index');
 
 
 describe('our test bundle', function () {

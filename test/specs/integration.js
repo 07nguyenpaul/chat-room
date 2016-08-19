@@ -84,6 +84,13 @@ describe('chat input interaction', function() {
 
   });
 
-
+  it('current user should have a delete button', function() {
+      var chatInput = browser.element('.input-field');
+      var deleteButton = browser.element('.delete-button');
+      chatInput.setValue('suh dude');
+      browser.click('.send-button');
+      assert(deleteButton.isExisting(''));
+    });
+    
 
 });
