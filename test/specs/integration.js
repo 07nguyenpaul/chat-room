@@ -81,7 +81,6 @@ describe('chat input interaction', function() {
     var colorUser2 = browser.getCssProperty('.user2', 'color');
 
     assert.notEqual(colorUser1, colorUser2, 'not the same color');
-
   });
 
   it('current user should have a delete button', function() {
@@ -91,6 +90,6 @@ describe('chat input interaction', function() {
       browser.click('.send-button');
       assert(deleteButton.isExisting(''));
     });
-    
+
 
 });
