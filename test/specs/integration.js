@@ -91,12 +91,12 @@ context('Deleting a message', function() {
       browser.click('.send-button');
       assert(deleteButton.isExisting(''));
     });
-    // it('should only remove the current user message and NOT the AI', function() {
-    //   var deleteButton = browser.element('.delete-button');
-    //
-    //   browser.click('.delete-button');
-    //   assert.equal( '');
-    // });
+    it('should only remove the current user message and NOT the AI', function() {
+      var deleteButton = browser.element('.delete-button');
+
+      browser.click('.delete-button');
+      assert.equal( '');
+    });
     it('should have a edit button for only the current user and NOT the AI', function() {
         var chatInput = browser.element('.input-field');
         var editButton = browser.element('.edit-button');
