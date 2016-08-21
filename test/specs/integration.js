@@ -95,14 +95,14 @@ context('Deleting a message', function() {
       var deleteButton = browser.element('.delete-button');
 
       browser.click('.delete-button');
-      assert.equal( '');
+      assert.equal('');
     });
-    it('should have a edit button for only the current user and NOT the AI', function() {
-        var chatInput = browser.element('.input-field');
-        var editButton = browser.element('.edit-button');
-        chatInput.setValue('suh dude');
-        browser.click('.send-button');
-        assert(editButton.isExisting(''));
-      });
+    // it('should have a edit button for only the current user and NOT the AI', function() {
+    //     var chatInput = browser.element('.input-field');
+    //     var editButton = browser.element('.edit-button');
+    //     chatInput.setValue('suh dude');
+    //     browser.click('.send-button');
+    //     assert(editButton.isExisting(''));
+    //   });
   });
 });
