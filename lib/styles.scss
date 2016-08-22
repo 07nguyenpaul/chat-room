@@ -1,9 +1,9 @@
-$antique-yellow: #E0D441;
-$cream: #FCFBE3;
-$orange: #EABA6A;
-$primary-background-color: #ECE0BF;
+$antique-yellow: #9C836C;
+$cream: #C7B99E;
+$primary-background-color: #FCEAC8;
 $white: #FFF;
 $header-font: 'Kreon', serif;
+$header-color: #792534;
 
 
 body {
@@ -17,6 +17,7 @@ header {
 }
 
 h1 {
+  color: $header-color;
   font-family: $header-font;
   font-size: 30px;
   letter-spacing: 2px;
@@ -34,6 +35,7 @@ img {
 
 .user1 {
   background-color: $white;
+  color: $header-color;
   display: flex;
   margin-left: auto;
   margin-right: 5px;
@@ -68,16 +70,16 @@ aside {
 .chat-box {
   background-color: $cream;
   border: 2px solid black;
-  // height: 500px;
+  border-radius: 5px;
   margin: auto;
   width: 90%;
 }
 
 .send-button,
 .delete-button {
-  background-color: $orange;
+  background-color: lighten($header-color, 10);
   border-radius: 5px;
-  color: black;
+  color: white;
   height: 25px;
   text-transform: uppercase;
 }
@@ -93,4 +95,45 @@ textarea {
 
 .current-message {
   max-width: 70%;
+}
+@media screen and (min-width: 650px) {
+
+  header {
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  img {
+    display: inline-block;
+  }
+
+  .input-field {
+    max-width: 80%;
+  }
+
+  .input-field,
+  .character-count,
+  .send-button {
+    margin-left: 70px;
+  }
+
+  .user1,
+  .user2 {
+    font-size: 24px;
+    height: auto;
+    margin-top: 20px;
+    max-width: 60%;
+    padding-bottom: 10px;
+  }
+
+  .user1 {
+    margin-right: 20px;
+  }
+
+  .user2 {
+    margin-left: 20px;
+  }
 }
