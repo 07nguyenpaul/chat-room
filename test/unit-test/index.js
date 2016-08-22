@@ -3,7 +3,6 @@ const $ = require('jquery');
 require('../../lib/index');
 const Chat = require('../../lib/message');
 const ChatroomRepo = require('../../lib/message');
-// require('../unit-test/message-test');
 
 
 describe('Our test bundle', function () {
@@ -65,29 +64,9 @@ describe('Chatroom', function() {
       assert.isFunction(ChatroomRepo.editMessage);
     });
 
-    it('should create a new message when addNewMessage() is called', function(message, user) {
+    xit('should create a new message when addNewMessage() is called', function(message, user) {
       ChatroomRepo.addNewMessage(message='suh dude', user='Billy');
-      assert.equal()
+      assert.equal('.current-message', true);
     });
   });
 });
-
-
-// describe('message input interactions', function() {
-//   it('messageDisplay() should display the chat message to the page', function() {
-//     var $messageInput = $('.input-field');
-//     $messageInput.val('Great idea.');
-//
-//     assert.equal(chat.messageDisplay(), 'Great idea.');
-//   });
-//
-//   it('disableButton() should disable the button', function() {
-//     var $sendButton = $('.send-button');
-//     assert.isTrue(disableButton(), 'the button is disabled');
-//   });
-//
-//   it('enableButton() should enable the button', function() {
-//     var $sendButton = $('.send-button');
-//     assert.isTrue(enableButton(), 'the button is enabled');
-//   });
-// });
