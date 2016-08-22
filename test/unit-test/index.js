@@ -20,10 +20,11 @@ describe('Message', function() {
 });
 
 describe('Chatroom', function() {
-  context('Message should be in an array', function() {
+  xcontext('Message should be in an array', function() {
     it('should be an array', function() {
-      var allMessagesInChatbox = [];
-      assert.isArray(allMessagesInChatbox);
+      ChatroomRepo.allMessagesInChatbox = [];
+      ChatroomRepo.addNewMessage('suh', 'dude');
+      assert.equal(ChatroomRepo._messageArray.length, 1);
     });
   });
 
