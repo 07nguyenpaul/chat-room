@@ -8,7 +8,7 @@ describe('Our test bundle', function() {
   });
 });
 
-descrive('Message', function() {
+describe('Message', function() {
   it('should have set attributes', function() {
     var message = new Chat('Totally', 'user2');
     assert.equal(message.message, 'Totally');

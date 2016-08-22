@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const $ = require('jquery');
 require('../../lib/index');
-require('../lib/test/message');
+require('../unit-test/message-test');
 
 
 describe('our test bundle', function () {
