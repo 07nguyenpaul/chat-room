@@ -1,9 +1,40 @@
-$primary-text-color: #F00;
+$primary-background-color: #ECE0BF;
 
-// body {
-//   color: $primary-text-color;
-// }
+body {
+  background-color: $primary-background-color;
+}
+
+header {
+  background: url('/lib/images/telegram.png') no-repeat;
+  background-size: cover;
+  height: 100px;
+  margin-top: -20px;
+}
+
+img {
+  max-width: 40%;
+  height: 70px;
+  margin: 0 auto;
+}
+
+footer {
+  height: 100px;
+}
 
 .user1 {
   color: blue;
+}
+
+
+.user1,
+.user2,
+.input-area {
+  max-width: 400px;
+  border: 2px solid black;
+}
+.chat-box {
+  background-color: orange;
+}
+.input-area {
+  background-color: pink;
 }
