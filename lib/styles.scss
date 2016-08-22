@@ -1,4 +1,8 @@
+$antique-yellow: #E0D441;
+$cream: #FCFBE3;
+$orange: #EABA6A;
 $primary-background-color: #ECE0BF;
+$white: #FFF;
 
 body {
   background-color: $primary-background-color;
@@ -8,15 +12,14 @@ header {
 background: url('/lib/images/telegram.png') no-repeat;
 background-size: cover;
 height: 150px;
-width: 380px;
-border-radius: 25px;
 margin-top: 20px;
+max-width: 100%;
 }
 
 img {
-  max-width: 40%;
   height: 70px;
   margin: 0 auto;
+  max-width: 40%;
 }
 
 footer {
@@ -24,35 +27,50 @@ footer {
 }
 
 .user1 {
-  color: blue;
+  background-color: $white;
+}
+
+.user2 {
+  background-color: $antique-yellow;
 }
 
 .user1,
 .user2,
-.input-area {
-  width: 90%;
-  border-bottom: 2px solid black;
-  margin: 5px 0px 7px 7px;
-}
-.chat-box {
-  background-color: orange;
-  height: 500px;
-  width: 90%;
+.input-field {
   border: 2px solid black;
+  border-radius: 10px;
+  height: 60px;
+  margin: 10px auto;
+  width: 90%;
+}
+
+.input-area {
+  max-width: 80%;
+}
+
+.chat-box {
+  background-color: $cream;
+  border: 2px solid black;
+  height: 500px;
   margin: auto;
+  width: 90%;
+}
+
+.send-button {
+  background-color: $orange;
+  color: $white;
 }
 
 .delete-button {
-  background-image: url('/lib/images/delete.png') no repeat;
-  display: inline-block;
-  border: none;
-  width:15px;
-  height: 15px;
-  margin-bottom: 5px;
+  background-image: url('../images/delete.png') no repeat;
+  // border: none;
+  // display: inline-block;
+  // height: 15px;
+  // margin-bottom: 5px;
+  // width:15px;
 }
 
 .input-area {
-  background-color: pink;
+  margin: 10px auto;
   width: 90%;
-  margin: auto;
 }
