@@ -1,6 +1,7 @@
 const assert = require('chai').assert;
 const $ = require('jquery');
 require('../../lib/index');
+require('../lib/test/message');
 
 
 describe('our test bundle', function () {
@@ -14,6 +15,14 @@ describe('our test bundle', function () {
 //
 //   });
 // });
+
+describe('Message', function() {
+  it('should have set attributes', function() {
+    var message = new Chat('Totally', 'user2');
+    assert.equal(message.message, 'Totally');
+    assert.equal(message.user, 'user2');
+  });
+});
 
 describe('message input interactions', function() {
   it('messageDisplay() should display the chat message to the page', function() {

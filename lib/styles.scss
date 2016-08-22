@@ -5,10 +5,12 @@ body {
 }
 
 header {
-  background: url('/lib/images/telegram.png') no-repeat;
-  background-size: cover;
-  height: 100px;
-  margin-top: -20px;
+background: url('/lib/images/telegram.png') no-repeat;
+background-size: cover;
+height: 150px;
+width: 380px;
+border-radius: 25px;
+margin-top: 20px;
 }
 
 img {
@@ -25,16 +27,32 @@ footer {
   color: blue;
 }
 
-
 .user1,
 .user2,
 .input-area {
-  max-width: 400px;
-  border: 2px solid black;
+  width: 90%;
+  border-bottom: 2px solid black;
+  margin: 5px 0px 7px 7px;
 }
 .chat-box {
   background-color: orange;
+  height: 500px;
+  width: 90%;
+  border: 2px solid black;
+  margin: auto;
 }
+
+.delete-button {
+  background-image: url('/lib/images/delete.png') no repeat;
+  display: inline-block;
+  border: none;
+  width:15px;
+  height: 15px;
+  margin-bottom: 5px;
+}
+
 .input-area {
   background-color: pink;
+  width: 90%;
+  margin: auto;
 }
