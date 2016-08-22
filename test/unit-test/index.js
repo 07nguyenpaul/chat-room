@@ -1,20 +1,15 @@
 const assert = require('chai').assert;
 const $ = require('jquery');
 require('../../lib/index');
-require('../unit-test/message-test');
+const Chat = require('../../lib/message');
+const ChatroomRepo = require('../../lib/message');
 
 
-describe('our test bundle', function () {
+describe('Our test bundle', function () {
   it('should work', function () {
     assert(true);
   });
 });
-
-// describe('storing user input', function() {
-//   it('should store the user"s chat input in a variable', function() {
-//
-//   });
-// });
 
 describe('Message', function() {
   it('should have set attributes', function() {
@@ -24,21 +19,54 @@ describe('Message', function() {
   });
 });
 
-describe('message input interactions', function() {
-  it('messageDisplay() should display the chat message to the page', function() {
-    var $messageInput = $('.input-field');
-    $messageInput.val('Great idea.');
-
-    assert.equal(chat.messageDisplay(), 'Great idea.');
+describe('Chatroom', function() {
+  context('Message should be in an array', function() {
+    it('should be an array', function() {
+      var allMessagesInChatbox = [];
+      assert.isArray(allMessagesInChatbox);
+    });
   });
 
-  it('disableButton() should disable the button', function() {
-    var $sendButton = $('.send-button');
-    assert.isTrue(disableButton(), 'the button is disabled');
-  });
+  context('Chatroom functions', function() {
+    it('should have function called addNewMessage', function() {
+      assert.isFunction(ChatroomRepo.addNewMessage);
+    });
 
-  it('enableButton() should enable the button', function() {
-    var $sendButton = $('.send-button');
-    assert.isTrue(enableButton(), 'the button is enabled');
+    it('should have function called storeMessage', function() {
+      assert.isFunction(ChatroomRepo.storeMessage);
+    });
+
+    it('should have function called retrieveMessage', function() {
+      assert.isFunction(ChatroomRepo.retrieveMessage);
+    });
+
+    it('should have function called renderMessageToPage', function() {
+      assert.isFunction(ChatroomRepo.renderMessageToPage);
+    });
+
+    it('should have function called renderMessageToPage', function() {
+      assert.isFunction(ChatroomRepo.renderMessageToPage);
+    });
+
+    it('should have function called disableSendButton', function() {
+      assert.isFunction(ChatroomRepo.disableSendButton);
+    });
+
+    it('should have function called enableButton', function() {
+      assert.isFunction(ChatroomRepo.enableButton);
+    });
+
+    it('should have function called findId', function() {
+      assert.isFunction(ChatroomRepo.findId);
+    });
+
+    it('should have function called editMessage', function() {
+      assert.isFunction(ChatroomRepo.editMessage);
+    });
+
+    xit('should create a new message when addNewMessage() is called', function(message, user) {
+      ChatroomRepo.addNewMessage(message='suh dude', user='Billy');
+      assert.equal('.current-message', true);
+    });
   });
 });
