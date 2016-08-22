@@ -3,42 +3,46 @@ $cream: #FCFBE3;
 $orange: #EABA6A;
 $primary-background-color: #ECE0BF;
 $white: #FFF;
-$header-font: 'Slabo 27px', serif;
+$header-font: 'Kreon', serif;
+
 
 body {
   background-color: $primary-background-color;
 }
 
 header {
-height: 100px;
-margin-top: 20px;
-max-width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  max-width: 100%;
 }
 
 h1 {
   font-family: $header-font;
-  font-size: 60px;
+  font-size: 30px;
+  letter-spacing: 2px;
   margin: 0 auto;
   text-align: center;
   width: 100%;
 }
 
 img {
+  display: none;
   height: 70px;
   margin: 0 auto;
   max-width: 40%;
 }
 
-footer {
-  height: 100px;
-}
-
 .user1 {
   background-color: $white;
+  display: flex;
+  margin-left: auto;
+  margin-right: 5px;
+  // align-content: space-between;
 }
 
 .user2 {
   background-color: $antique-yellow;
+  margin: 0 auto 10px 5px;
 }
 
 .user1,
@@ -47,37 +51,46 @@ footer {
   border: 2px solid black;
   border-radius: 10px;
   height: 60px;
-  margin: 10px auto;
+  margin-top: 10px;
+  padding-top: 20px;
   width: 90%;
 }
 
+aside {
+  margin-left: 20px;
+}
+
 .input-area {
-  max-width: 80%;
+  margin: 5px auto;
+  width: 90%;
 }
 
 .chat-box {
   background-color: $cream;
   border: 2px solid black;
-  height: 500px;
+  // height: 500px;
   margin: auto;
   width: 90%;
 }
 
-.send-button {
+.send-button,
+.delete-button {
   background-color: $orange;
-  color: $white;
+  border-radius: 5px;
+  color: black;
+  height: 25px;
+  text-transform: uppercase;
 }
 
 .delete-button {
-  background-image: url('/lib/images/delete.png') no-repeat;
-  // border: none;
-  // display: inline-block;
-  // height: 15px;
-  // margin-bottom: 5px;
-  // width:15px;
+  margin-left: auto;
+  margin-right: 5px;
 }
 
-.input-area {
-  margin: 10px auto;
-  width: 90%;
+textarea {
+  font-size: 16px;
+}
+
+.current-message {
+  max-width: 70%;
 }
