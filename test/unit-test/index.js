@@ -20,12 +20,6 @@ describe('Message', function() {
 });
 
 describe('Chatroom', function() {
-  context('Message should be in an array', function() {
-    it('should be an array', function() {
-      var allMessagesInChatbox = [];
-      assert.isArray(allMessagesInChatbox);
-    });
-  });
 
   context('Chatroom functions', function() {
     it('should have function called addNewMessage', function() {
