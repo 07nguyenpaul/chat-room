@@ -3,21 +3,23 @@ $cream: #FCFBE3;
 $orange: #EABA6A;
 $primary-background-color: #ECE0BF;
 $white: #FFF;
-$header-font: 'Slabo 27px', serif;
+$header-font: 'Kreon', serif;
+
 
 body {
   background-color: $primary-background-color;
 }
 
 header {
-height: 50px;
-margin-top: 20px;
-max-width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  max-width: 100%;
 }
 
 h1 {
   font-family: $header-font;
-  font-size: 35px;
+  font-size: 30px;
+  letter-spacing: 2px;
   margin: 0 auto;
   text-align: center;
   width: 100%;
