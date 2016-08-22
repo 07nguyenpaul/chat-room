@@ -94,3 +94,44 @@ textarea {
 .current-message {
   max-width: 70%;
 }
+@media screen and (min-width: 650px) {
+
+  header {
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  img {
+    display: inline-block;
+  }
+
+  .input-field {
+    max-width: 80%;
+  }
+
+  .input-field,
+  .character-count,
+  .send-button {
+    margin-left: 70px;
+  }
+
+  .user1,
+  .user2 {
+    font-size: 24px;
+    height: auto;
+    margin-top: 20px;
+    max-width: 60%;
+    padding-bottom: 10px;  
+  }
+
+  .user1 {
+    margin-right: 20px;
+  }
+
+  .user2 {
+    margin-left: 20px;
+  }
+}
