@@ -72,8 +72,8 @@ describe('chat input interaction', function() {
 
     var chatList = browser.getText('.show-recent-message');
 
-    assert.equal(chatList[0], 'suh dude');
-    assert.equal(chatList[1], 'yo man');
+    assert.equal(chatList[1], 'suh dude');
+    assert.equal(chatList[2], 'yo man');
   });
 
   it('should visually differentiate each user', function() {
@@ -83,7 +83,7 @@ describe('chat input interaction', function() {
     assert.notEqual(colorUser1, colorUser2, 'not the same color');
   });
 
-context('Deleting a message', function() {
+  context('Deleting a message', function() {
     it('should have a delete button for only the current user and NOT the AI', function() {
       var chatInput = browser.element('.input-field');
       var deleteButton = browser.element('.delete-button');
@@ -91,18 +91,37 @@ context('Deleting a message', function() {
       browser.click('.send-button');
       assert(deleteButton.isExisting(''));
     });
+
     it('should only remove the current user message and NOT the AI', function() {
+      var chatInput = browser.element('.input-field');
       var deleteButton = browser.element('.delete-button');
 
+      chatInput.setValue('hello');
+      assert.equal(chatInput.getValue(), 'hello');
+
+      browser.click('.send-button');
       browser.click('.delete-button');
-      assert.equal('');
+
+      var allMessages = browser.getText('.current-message');
+      assert.equal(allMessages[0], 'suh dude');
     });
-    // it('should have a edit button for only the current user and NOT the AI', function() {
-    //     var chatInput = browser.element('.input-field');
-    //     var editButton = browser.element('.edit-button');
-    //     chatInput.setValue('suh dude');
-    //     browser.click('.send-button');
-    //     assert(editButton.isExisting(''));
-    //   });
+
+  // context('Editing a massage', function() {
+  //   it('should be able to only edit user message and NOT the AI', function() {
+  //
+  //   });
+  //
+  // });
+  //
+  //
+  //
+  //
+  //   // it('should have a edit button for only the current user and NOT the AI', function() {
+  //   //     var chatInput = browser.element('.input-field');
+  //   //     var editButton = browser.element('.edit-button');
+  //   //     chatInput.setValue('suh dude');
+  //   //     browser.click('.send-button');
+  //   //     assert(editButton.isExisting(''));
+  //   //   });
   });
 });
