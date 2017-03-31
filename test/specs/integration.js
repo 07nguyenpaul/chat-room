@@ -1,3 +1,5 @@
+'use strict';
+
 const assert = require('assert');
 var $ = require('jquery');
 
@@ -105,23 +107,15 @@ describe('chat input interaction', function() {
       var allMessages = browser.getText('.current-message');
       assert.equal(allMessages[0], 'suh dude');
     });
+  });
 
-  // context('Editing a massage', function() {
-  //   it('should be able to only edit user message and NOT the AI', function() {
-  //
-  //   });
-  //
-  // });
-  //
-  //
-  //
-  //
-  //   // it('should have a edit button for only the current user and NOT the AI', function() {
-  //   //     var chatInput = browser.element('.input-field');
-  //   //     var editButton = browser.element('.edit-button');
-  //   //     chatInput.setValue('suh dude');
-  //   //     browser.click('.send-button');
-  //   //     assert(editButton.isExisting(''));
-  //   //   });
+  context('Showing last 10 messages', function() {
+    it('should only show the last 10 messages', function() {
+      var chatInput = browser.element('.input-field');
+
+      chatInput.setValue(['hello', 'hi', 'suh', 'sup', 'allo', 'yo']);
+      assert.equal(chatInput.getValue(), );
+
+    });
   });
 });
